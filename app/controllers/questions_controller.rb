@@ -3,17 +3,17 @@ class QuestionsController < ApplicationController
   end
 
   def answer
-    @user_input = params[:user_question].capitalize
+    @user_input = params[:question].capitalize
     @answer = coach_answer(@user_input)
   end
 
   private
 
   def coach_answer(question)
-    if question == "I am going to work"
+    if question == 'I am going to work'
       'Great!'
-    elsif question[-1] == "?"
-      "Silly question, get dressed and go to work"
+    elsif question[-1] == '?'
+      'Silly question, get dressed and go to work'
     else
       "I don't care, get dressed and go to work!"
     end
